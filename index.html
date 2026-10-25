@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Men's Fashion | Digital Business Card</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: url('mk.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #0f172a;
+            position: relative;
+        }
+        /* Frosted glass backdrop overlay for readability and gorgeous background logo visibility */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: -1;
+        }
+        .frosted-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+        .icon-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .icon-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(15, 23, 42, 0.2); }
+            50% { box-shadow: 0 0 0 10px rgba(15, 23, 42, 0); }
+        }
+        .avatar-glow {
+            animation: pulseGlow 3s infinite;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4 sm:p-6">
+
+    <div class="w-full max-w-md frosted-card rounded-[2.5rem] overflow-hidden my-4 relative">
+
+        <!-- Header Section -->
+        <header class="p-6 sm:p-8 text-center relative border-b border-white/40">
+            <!-- Profile Logo (gta.jpg) -->
+            <div class="w-28 h-28 mx-auto mb-4 rounded-3xl p-1 bg-white/80 shadow-lg border border-white overflow-hidden flex items-center justify-center avatar-glow">
+                <img src="mk.jpg" alt="GTA Fashion Logo" class="w-full h-full object-cover rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/150x150/ffffff/0f172a?text=GTA';">
+            </div>
+
+            <!-- Title / Name -->
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 mb-1">MK Men's Fashion</h1>
+
+            <!-- Welcome text -->
+            <p class="text-slate-600 text-sm font-semibold">Welcome to MK Men's Fashion</p>
+
+            <!-- Action Buttons: Save Contact & Share -->
+            <div class="grid grid-cols-2 gap-3 mt-5">
+                <button onclick="downloadVCard()" class="py-3 px-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer">
+                    <i class="fa-solid fa-address-card text-xs text-emerald-400"></i>
+                    <span>Save Contact</span>
+                </button>
+                <button onclick="shareCard()" class="py-3 px-4 rounded-2xl bg-white/80 hover:bg-white text-slate-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 border border-white/60 shadow-sm transition-all cursor-pointer">
+                    <i class="fa-solid fa-share-nodes text-xs text-indigo-600"></i>
+                    <span>Share Card</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="px-6 pt-5 pb-2 text-center">
+            <h2 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-1">Get in Touch</h2>
+        </section>
+
+        <section class="px-6 pb-6 space-y-3 border-b border-white/40">
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Phone Call -->
+                <a href="tel:0932505230" class="icon-btn flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0">
+                        <i class="fa-solid fa-phone text-sm"></i>
+                    </div>
+                    <div class="min-w-0 text-left">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Call</div>
+                        <div class="text-xs font-bold text-slate-900 truncate">0932505230</div>
+                    </div>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/linkmale21" target="_blank" rel="noopener noreferrer" class="icon-btn flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-500 shrink-0">
+                        <i class="fa-brands fa-telegram text-lg"></i>
+                    </div>
+                    <div class="min-w-0 text-left">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Telegram</div>
+                        <div class="text-xs font-bold text-slate-900 truncate">@linkmale21</div>
+                    </div>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@mkmens28" target="_blank" rel="noopener noreferrer" class="icon-btn col-span-2 flex items-center gap-3 p-3.5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-500 shrink-0">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                    </div>
+                    <div class="flex-1 min-w-0 text-left">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">TikTok</div>
+                        <div class="text-xs font-bold text-slate-900 truncate">@mkmens28</div>
+                    </div>
+                      <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 pr-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="p-6 border-b border-white/40 space-y-3">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Store Location</h2>
+                <span class="text-[11px] font-bold text-slate-700 bg-white/80 px-2.5 py-1 rounded-full border border-white/60 shadow-xs">Jemo 1 Saddamo Tower G2</span>
+            </div>
+
+            <!-- Map Card / Embed container -->
+            <div class="rounded-2xl overflow-hidden border border-white shadow-md bg-white/50 p-2">
+                <div class="w-full h-40 rounded-xl overflow-hidden relative">
+                    <!-- Google Maps IFrame embed pointing to exact location -->
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3941.1242516997263!2d38.713891000000004!3d8.960697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwNTcnMzguNSJOIDM4wrA0Mic1MC4wIkU!5e0!3m2!1sen!2set!4v1792935310609!5m2!1sen!2set">
+                    ></iframe>
+                </div>
+                <!-- Direct Google Maps Link Button -->
+                <a href="https://maps.app.goo.gl/xvAoZZtvEHUZFYcP9" target="_blank" rel="noopener noreferrer" class="mt-2.5 w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 text-xs font-bold flex items-center justify-center gap-2 border border-slate-200 shadow-xs transition-all">
+                    <i class="fa-solid fa-map-location-dot text-rose-500"></i>
+                    <span>Open Exact Google Maps View</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400 ml-auto"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer class="py-6 px-6 text-center bg-white/40 space-y-2 text-xs">
+            <p class="font-bold text-slate-700">
+                Powered by Yodahe Solutions
+            </p>
+            <div>
+                <p>Want a card for your business? Call <a href="tel:0944131381" class="text-indigo-600 font-bold hover:underline">0944131381</a></p>
+            </div>
+            <p class="text-[11px] font-medium text-slate-500 pt-1">© 2026 MK Men's Fashion. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification for clipboard / vCard -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-4 py-3 rounded-2xl shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2.5 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-sm"></i>
+        <span id="toast-msg">Link copied to clipboard!</span>
+    </div>
+
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: "MK Men's Fashion",
+                    text: "Check out MK Men's Fashion digital business card",
+                    url: window.location.href,
+                }).catch(() => {});
+            } else {
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                showToast('Card link copied to clipboard!');
+            }
+        }
+
+        function downloadVCard() {
+            const vCardData =
+`BEGIN:VCARD
+VERSION:3.0
+FN:MK Men's Fashion
+TEL:0932505230
+NOTE:Jemo 1 Saddamo Tower G2
+URL:https://t.me/linkmale21
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'MK_Mens.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('Contact vCard downloaded successfully!');
+        }
+    </script>
+
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service Worker registered successfully.'))
+        .catch((err) => console.log('Service Worker registration failed: ', err));
+    });
+  }
+</script>
+
+</body>
+</html>
